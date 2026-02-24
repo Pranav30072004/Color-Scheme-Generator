@@ -1,0 +1,41 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #1F2937;
+}
+
+.color-pick-container {
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.color-picker {
+    width: 61px;
+    height: 43px;
+    border: none;
+}
+
+.scheme-selector {
+    width: 312px;
+    height: 42px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: #1F293A;
+    color: #D5D4D8;
+}
+
+.scheme-generator-btn {
+    width: 123px;
+    height: 42px;
+    background-color: #3D4B60;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+}
