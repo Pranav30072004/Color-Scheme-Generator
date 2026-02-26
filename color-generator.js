@@ -3,6 +3,8 @@ const schemeChoiceInput = document.getElementById('scheme-selector');
 const colorSchemeBtn = document.getElementById('scheme-generator-btn');
 const schemeContainer = document.getElementById('color-scheme-container');
 
+console.log("JS LOADED");
+
 
 function generateScheme(color, mode) {
    fetch(`https://www.thecolorapi.com/scheme?hex=${color}&mode=${mode}`)
