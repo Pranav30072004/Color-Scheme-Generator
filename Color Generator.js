@@ -5,7 +5,7 @@ const schemeContainer = document.getElementById('color-scheme-container');
 
 
 function generateScheme(color, mode) {
-   fetch(`  https://www.thecolorapi.com/scheme?hex=${color}&mode=${mode}`)
+   fetch(`https://www.thecolorapi.com/scheme?hex=${color}&mode=${mode}`)
    .then(res => res.json())
    .then(data => {
        let colorSchemeHtml = data.colors.map( scheme =>
