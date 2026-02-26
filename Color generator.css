@@ -5,6 +5,9 @@
 body {
     margin: 0;
     background-color: #1F2937;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .color-pick-container {
@@ -39,3 +42,30 @@ body {
     border: none;
     border-radius: 5px;
 }
+
+.color-scheme-container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+.color-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.color-block {
+    flex: 1;
+}
+
+.color-hex {
+    height: 60px;
+    background-color: #1F2937;
+    color: #D5D4D8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+

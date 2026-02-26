@@ -8,15 +8,16 @@ function generateScheme(color, mode) {
    fetch(`  https://www.thecolorapi.com/scheme?hex=${color}&mode=${mode}`)
    .then(res => res.json())
    .then(data => {
-       let schemeArray = data.colors;
-       let colorSchemeHtml = ``
-       for(scheme of schemeArray) {
-           colorSchemeHtml += `
-           <img src="${scheme.image.bare}" id="color-img" />
-           <p class="color-hex">${scheme.hex.value}</p>
+       let colorSchemeHtml = data.colors.map( scheme =>
            `
-       }
-       console.log(colorSchemeHtml);
+           <div class="color-column">
+                <div class="color-block"
+                style="background-color: ${scheme.hex.value};">                
+                </div>
+                <div class="color-hex">${scheme.hex.value}</div>
+           </div>
+           `
+       ).join('')
        schemeContainer.innerHTML = colorSchemeHtml;
    });
 
@@ -28,3 +29,15 @@ colorSchemeBtn.addEventListener('click', () => {
 
     generateScheme(colorChoice, schemeChoice);
 })
+
+schemeContainer.addEventListener('click', (e) => {
+    const column = e.target.closest('.color-column');
+    if(!column) return;
+
+    const hex = column.querySelector('.color-hex').textContent;
+
+    navigator.clipboard.writeText(hex)
+        .then(() => alert(`${hex} copied to clipboard`))
+        .catch(err => console.log(err));
+})
+
