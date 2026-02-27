@@ -22,6 +22,8 @@ body {
     width: 61px;
     height: 43px;
     border: none;
+
+    cursor: pointer;
 }
 
 .scheme-selector {
@@ -41,6 +43,8 @@ body {
     font-weight: 500;
     border: none;
     border-radius: 5px;
+
+    cursor: pointer;
 }
 
 .color-scheme-container {
