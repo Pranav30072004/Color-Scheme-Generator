@@ -1,4 +1,3 @@
-console.log("JS LOADED");
 const colorChoiceInput = document.getElementById('color-picker');
 const schemeChoiceInput = document.getElementById('scheme-selector');
 const colorSchemeBtn = document.getElementById('scheme-generator-btn');
@@ -8,8 +7,6 @@ const schemeContainer = document.getElementById('color-scheme-container');
 
 
 function generateScheme(color, mode) {
-    console.log("fetching...");
-
    fetch(`https://www.thecolorapi.com/scheme?hex=${color}&mode=${mode}`)
    .then(res => res.json())
    .then(data => {
@@ -32,9 +29,6 @@ function generateScheme(color, mode) {
 colorSchemeBtn.addEventListener('click', () => {
     let colorChoice = colorChoiceInput.value.replace("#", "");
     let schemeChoice = schemeChoiceInput.value;
-
-    console.log("Color: ", colorChoice);
-    console.log("Scheme: ", schemeChoice);
 
     generateScheme(colorChoice, schemeChoice);
 })
